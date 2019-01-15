@@ -1,5 +1,6 @@
 package com.hxx.service;
 
+import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
@@ -35,6 +36,12 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
      */
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ReferenceCountUtil.release(msg);
+        try {
+            //控制台原样输出收到的字符
+            //注释即为抛弃
+            System.out.println(((ByteBuf) msg).toString(io.netty.util.CharsetUtil.US_ASCII));
+        } finally {
+            ReferenceCountUtil.release(msg);
+        }
     }
 }
