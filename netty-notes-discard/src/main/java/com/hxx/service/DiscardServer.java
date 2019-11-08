@@ -13,7 +13,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
  * <ul>
  * <li>功能说明：</li>
  * <li>作者：tal on 2019/1/15 0015 11:21 </li>
- * <li>邮箱：houxiangxiang@cibfintech.com</li>
+ * <li>邮箱：hou_xiangxiang@126.com</li>
  * </ul>
  */
 
